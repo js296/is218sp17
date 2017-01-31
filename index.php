@@ -13,7 +13,7 @@
       $car->accelerate();
       $car->decelerate();
    //this is how you print out the contents of the object  
-     print_r($car);
+      print_r($car);
     }
 //this is the last function called at the end of the program
     public function __destruct() {
@@ -28,8 +28,19 @@
       return $car;
     }
   }
+
+//this is a public function
+  abstract class vehicle{
+    public function accelerate(){
+    echo 'going faster <br>';
+    }
+    public function decelerate(){
+    echo 'doing slower <br>';
+    }
+  }
+
 //this is your car class that is the object of the program
-  class car {
+  class car extends vehicle {
 
 //these are properties of the car object
     public $make;
@@ -43,20 +54,6 @@
       $this->make = 'ford';
       $this->year = date("Y");
     }
-    //this is a public function
-    public function accelerate(){
-      echo 'going faster <br>';
-    }
-    public function decelerate(){
-      echo 'doing slower <br>';
-    }    
+ 
  }
-
-
-
-
-
-
-
-
 ?>
